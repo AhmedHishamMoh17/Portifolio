@@ -1,0 +1,27 @@
+/* Reset user-agent styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Optional: make body and html full height */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: #0F172A; /* dark bg default */
+}
+
+/* Remove scroll behavior issues */
+body {
+  overscroll-behavior: none;
+}
+
+/* Tailwind preflight */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
