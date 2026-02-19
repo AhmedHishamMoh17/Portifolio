@@ -27,7 +27,7 @@ export default function Skills() {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center md:text-left tracking-wide">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold m-10 md:mb-12 text-center md:text-left tracking-wide">
         Skills
       </h2>
 
