@@ -6,6 +6,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const links = ["hero","about","education","skills","projects","certificates","contact"];
 
+  // ارتفاع الـ Navbar للتعديل في الـ scroll
+  const navbarHeight = 64; // تقريبياً 16px padding + font-size
+
   return (
     <nav className="fixed top-0 left-0 w-screen bg-[#0F172A]/80 backdrop-blur-md z-50 px-6 py-4 flex justify-between items-center">
       {/* Logo / Name */}
@@ -19,6 +22,7 @@ export default function Navbar() {
               to={link}
               smooth={true}
               duration={800}
+              offset={-navbarHeight} // مهم عشان الـ fixed navbar
               className="hover:text-[#3B82F6] cursor-pointer"
             >
               {link.charAt(0).toUpperCase() + link.slice(1)}
@@ -51,6 +55,7 @@ export default function Navbar() {
                   to={link}
                   smooth={true}
                   duration={800}
+                  offset={-navbarHeight} // نفس offset للموبايل
                   className="hover:text-[#3B82F6] cursor-pointer block"
                   onClick={() => setOpen(false)}
                 >
