@@ -14,7 +14,7 @@ export default function Navbar() {
     "contact",
   ];
 
-  const navbarHeight = 60;
+  const navbarHeight = 58;
 
   return (
     <nav className="fixed top-0 left-0 w-screen bg-[#0F172A]/80 backdrop-blur-md z-50 px-6 py-4 flex justify-between items-center">
