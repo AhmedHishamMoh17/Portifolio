@@ -24,7 +24,7 @@ export default function Certificates() {
   return (
     <section
       id="certificates"
-      className="min-h-screen px-6 md:px-20 py-20 bg-[#1E293B] text-white relative"
+      className="min-h-screen  px-6 md:px-20 py-20 bg-[#1E293B] text-white relative"
     >
       <h2 className="text-4xl font-bold mb-10 text-[#3B82F6]">
         Certificates & Internships
