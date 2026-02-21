@@ -5,7 +5,7 @@ export default function CTAContact() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col items-center justify-center px-6 md:px-32 bg-[#0F172A] text-white relative overflow-hidden"
+      className="min-h-screen flex scroll-mt-[64px] flex-col items-center justify-center px-6 md:px-32 bg-[#0F172A] text-white relative overflow-hidden"
     >
       {/* Background Glows */}
       <div
