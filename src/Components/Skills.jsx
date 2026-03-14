@@ -15,109 +15,104 @@ import { SiDotnet, SiTailwindcss, SiPostman } from "react-icons/si";
 
 export default function Skills() {
   const frontendSkills = [
-    { name: "React", icon: <FaReact size={20} /> },
-    { name: "HTML5", icon: <FaHtml5 size={20} /> },
-    { name: "CSS3", icon: <FaCss3Alt size={20} /> },
-    { name: "JavaScript", icon: <FaJs size={20} /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss size={20} /> },
+    { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
+    { name: "HTML5", icon: <FaHtml5 className="text-[#E34F26]" /> },
+    { name: "CSS3", icon: <FaCss3Alt className="text-[#1572B6]" /> },
+    { name: "JavaScript", icon: <FaJs className="text-[#F7DF1E]" /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
   ];
 
   const backendSkills = [
-    { name: ".NET", icon: <SiDotnet size={20} /> },
-    { name: "C#", icon: <FaCogs size={20} /> },
-    { name: "SQL", icon: <FaDatabase size={20} /> },
-    { name: "REST APIs", icon: <FaCogs size={20} /> },
+    { name: ".NET", icon: <SiDotnet className="text-[#512BD4]" /> },
+    { name: "C#", icon: <FaCogs className="text-[#239120]" /> },
+    { name: "SQL", icon: <FaDatabase className="text-[#4479A1]" /> },
+    { name: "REST APIs", icon: <FaServer className="text-blue-400" /> },
   ];
+
   const tools = [
-    { name: "Git", icon: <FaGitAlt size={18} /> },
-    { name: "GitHub", icon: <FaGithub size={18} /> },
-    { name: "Postman", icon: <SiPostman size={18} /> },
-    { name: "VS Code", icon: <FaLaptopCode size={18} /> },
-    { name: "Visual Studio", icon: <FaLaptopCode size={18} /> },
-    { name: "IntelliJ IDEA", icon: <FaLaptopCode size={18} /> },
+    { name: "Git", icon: <FaGitAlt className="text-[#F05032]" /> },
+    { name: "GitHub", icon: <FaGithub className="text-white" /> },
+    { name: "Postman", icon: <SiPostman className="text-[#FF6C37]" /> },
+    { name: "VS Code", icon: <FaLaptopCode className="text-[#007ACC]" /> },
+    { name: "Visual Studio", icon: <FaLaptopCode className="text-[#C8C8C8]" /> },
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 }
+  };
 
   return (
-    <motion.section
+    <section
       id="skills"
-      className="min-h-screen flex flex-col justify-center px-6 md:px-32 py-24 bg-[#1E293B] text-white gap-12"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="relative min-h-screen flex flex-col justify-center px-6 md:px-24 py-24 overflow-hidden"
+      style={{ backgroundColor: "#0F172A" }}
     >
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold m-10 md:mb-12 text-center md:text-left tracking-wide">
-        Skills
-      </h2>
+      {/* لمسة إضاءة في الخلفية */}
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-      {/* Cards Container */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Frontend */}
-        <motion.div
-          className="bg-[#0F172A] rounded-2xl p-4 shadow-xl"
-          whileHover={{ scale: 1.03 }}
+      <div className="relative z-10 w-full max-w-7xl mx-auto">
+        <motion.div 
+          className="mb-16 text-center md:text-left"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
         >
-          <h3 className="text-lg md:text-xl font-semibold mb-3 flex items-center gap-2">
-            <FaLaptopCode size={25} /> Frontend
-          </h3>
-
-          <div className="flex flex-wrap gap-2">
-            {frontendSkills.map((skill) => (
-              <div
-                key={skill.name}
-                className="flex items-center gap-1.5 bg-black px-2 py-1 rounded-lg text-sm"
-              >
-                {skill.icon}
-                {skill.name}
-              </div>
-            ))}
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Tech <span className="text-blue-500">Stack</span>
+          </h2>
+          <div className="mt-4 h-1 w-20 bg-blue-500 rounded-full md:mx-0 mx-auto" />
         </motion.div>
 
-        {/* Backend */}
-        <motion.div
-          className="bg-[#0F172A] rounded-2xl p-4 shadow-xl"
-          whileHover={{ scale: 1.03 }}
-        >
-          <h3 className="text-lg md:text-xl font-semibold mb-3 flex items-center gap-2">
-            <FaServer size={25} /> Backend
-          </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { title: "Frontend", icon: <FaLaptopCode />, skills: frontendSkills },
+            { title: "Backend", icon: <FaServer />, skills: backendSkills },
+            { title: "Tools", icon: <FaCogs />, skills: tools }
+          ].map((category, idx) => (
+            <motion.div
+              key={idx}
+              className="bg-slate-800/40 backdrop-blur-sm border border-white/5 rounded-[2rem] p-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              whileHover={{ borderColor: "rgba(59,130,246,0.2)" }}
+            >
+              <h3 className="text-xl md:text-2xl font-bold mb-6 flex items-center gap-3 text-blue-400">
+                {category.icon} {category.title}
+              </h3>
 
-          <div className="flex flex-wrap gap-2">
-            {backendSkills.map((skill) => (
-              <div
-                key={skill.name}
-                className="flex items-center gap-1.5 bg-black px-2 py-1 rounded-lg text-sm"
+              <motion.div 
+                className="flex flex-wrap gap-3"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
               >
-                {skill.icon}
-                {skill.name}
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Tools */}
-        <motion.div
-          className="bg-[#0F172A] rounded-2xl p-4 shadow-xl"
-          whileHover={{ scale: 1.03 }}
-        >
-          <h3 className="text-lg md:text-xl font-semibold mb-3 flex items-center gap-2">
-            <FaCogs size={25} /> Tools
-          </h3>
-
-          <div className="flex flex-wrap gap-2">
-            {tools.map((tool) => (
-              <div
-                key={tool.name}
-                className="flex items-center gap-1.5 bg-black px-2 py-1 rounded-lg text-sm"
-              >
-                {tool.icon}
-                {tool.name}
-              </div>
-            ))}
-          </div>
-        </motion.div>
+                {category.skills.map((skill) => (
+                  <motion.div
+                    key={skill.name}
+                    variants={itemVariants}
+                    className="flex items-center gap-2 bg-slate-900/50 border border-white/5 px-4 py-2 rounded-xl text-sm font-medium hover:bg-blue-500/10 hover:border-blue-500/30 transition-all duration-300"
+                  >
+                    <span className="text-lg">{skill.icon}</span>
+                    <span className="text-slate-200">{skill.name}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

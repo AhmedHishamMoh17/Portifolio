@@ -1,54 +1,72 @@
 import { motion } from "framer-motion";
-import universityPic from "../assets/helwan univeristy.jpg"; // حط صورة الجامعة هنا
+import universityPic from "../assets/helwan univeristy.jpg";
 
 export default function Education() {
   return (
-    <motion.section
+    <section
       id="education"
-      className="min-h-screen flex flex-col md:flex-row justify-center items-center px-6 md:px-32 py-24 bg-[#0F172A] text-white gap-12"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-24"
+      style={{ backgroundColor: "#0F172A" }}
     >
-      {/* University Image */}
-      <motion.div
-        className="md:w-1/2 flex justify-center"
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <img
-          src={universityPic}
-          alt="Helwan University"
-          className="w-64 sm:w-72 md:w-96 rounded-3xl shadow-2xl object-cover"
-        />
-      </motion.div>
-      {/* University Info */}
-      <div className="md:w-1/2">
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 text-[#3B82F6]">
-          Helwan University
-        </h3>
+      {/* لمسة إضاءة جانبية */}
+      <div className="absolute right-0 top-1/4 w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
 
-        <p className="text-lg sm:text-xl md:text-2xl mb-2 font-medium text-[#A0A0A0]">
-          Faculty of Computers and Artificial Intelligence
-        </p>
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
+        
+        {/* الجزء الخاص بالصورة - مع إضافة Frame احترافي */}
+        <motion.div
+          className="relative flex-1 flex justify-center md:justify-end"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="relative group">
+            {/* الديكور اللي خلف الصورة */}
+            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-blue-500/30 rounded-3xl -z-10 group-hover:-bottom-2 group-hover:-right-2 transition-all duration-500" />
+            
+            <img
+              src={universityPic}
+              alt="Helwan University"
+              className="w-64 sm:w-80 md:w-[30rem] aspect-[4/3] object-cover rounded-3xl shadow-2xl border border-white/5 grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
+            />
+          </div>
+        </motion.div>
 
-        <p className="text-lg sm:text-xl md:text-2xl mb-2 font-medium text-[#A0A0A0]">
-          Software Engineering Department
-        </p>
+        {/* الجزء الخاص بالمعلومات */}
+        <div className="flex-1 text-center md:text-left space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-sm uppercase tracking-widest text-blue-500 font-bold mb-2">Education</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              Helwan University
+            </h3>
+            
+            <div className="space-y-2">
+              <p className="text-xl md:text-2xl font-medium text-slate-200">
+                Faculty of Computers and Artificial Intelligence
+              </p>
+              <p className="text-lg md:text-xl text-slate-400">
+                Software Engineering Department
+              </p>
+            </div>
 
-        <p className="text-lg sm:text-xl md:text-2xl mb-4 font-semibold text-[#28A745]">
-          2022 - 2026
-        </p>
+            <div className="inline-block mt-4 px-4 py-1 rounded-full border border-green-500/30 bg-green-500/10 text-[#28A745] font-semibold">
+              2022 — 2026
+            </div>
 
-        <p className="text-base sm:text-lg md:text-xl text-[#A0A0A0] leading-relaxed">
-          Learned web development, building modern Frontend and Backend
-          applications using React and .NET. Started problem solving from the
-          first semester and gained strong foundations in programming and
-          software engineering.
-        </p>
+            <p className="mt-8 text-base md:text-lg text-slate-400 leading-relaxed max-w-xl mx-auto md:mx-0">
+              Learned web development, building modern <span className="text-white">Frontend and Backend</span> applications using React and .NET. 
+              Gained strong foundations in programming and software engineering through consistent <span className="text-white">problem solving</span> since day one.
+            </p>
+          </motion.div>
+        </div>
+
       </div>
-    </motion.section>
+    </section>
   );
 }
