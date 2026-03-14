@@ -51,9 +51,8 @@ export default function About() {
               I eventually found my place in web development, building complete
               systems using <span className="text-blue-400 font-medium">React and .NET</span>. 
               I value clean, maintainable code and scalable architecture, and I’m known for being 
-              <span className="text-emerald-400 font-medium ml-1">flexible and collaborative</span>—open to 
-              refining and adjusting solutions as requirements evolve, while keeping 
-              everything structured.
+              <span className="text-emerald-400 font-medium ml-1">flexible and collaborative</span><span className="text-white  font-medium ml-1">—open to refining and adjusting solutions as requirements evolve, while keeping 
+              everything structured.</span> 
             </p>
           </motion.div>
         </div>
