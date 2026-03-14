@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaEnvelope, FaLinkedin, FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaGithub, FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 export default function CTAContact() {
   return (
@@ -64,7 +64,7 @@ export default function CTAContact() {
         </a>
 
         <a
-          href="https://github.com/ahmedhishamsalem01-del"
+          href="https://github.com/AhmedHishamMoh17"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-gray-400 text-3xl transition-transform transform hover:scale-110"
@@ -73,7 +73,7 @@ export default function CTAContact() {
         </a>
 
         <a
-          href="https://instagram.com/_subwayy-"
+          href="https://instagram.com/_subwayy_"
           target="_blank"
           rel="noopener noreferrer"
           className="text-pink-500 hover:text-pink-400 text-3xl transition-transform transform hover:scale-110"
@@ -88,6 +88,14 @@ export default function CTAContact() {
           className="text-blue-700 hover:text-blue-500 text-3xl transition-transform transform hover:scale-110"
         >
           <FaFacebook />
+        </a>
+        <a
+          href="https://wa.me/201283856454"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-green-700 hover:text-green-500 text-3xl transition-transform transform hover:scale-110"
+        >
+          <FaWhatsapp />
         </a>
       </motion.div>
     </section>
